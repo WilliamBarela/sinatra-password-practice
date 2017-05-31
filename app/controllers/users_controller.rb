@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   get '/signup' do
     erb :'users/new.html'
   end
@@ -10,9 +11,9 @@ class UsersController < ApplicationController
     @user.password = params[:password]
 
     if @user.save
-      redirect '/login'
+      redirect '/login'   # This is a REDIRECT
     else
-      erb :'users/new.html'
+      erb :'users/new.html' # This is a RENDER
     end
   end
 end
